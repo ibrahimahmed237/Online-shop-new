@@ -1,0 +1,47 @@
+<div class="pagination">
+  <!--<% if (hasPrevPage) { %><a href="?page=<%= prevPage %>">Previous</a>
+  
+<% } %>-->
+  <% if (currentPage === 1) { %><span class="active">1</span>
+  <% } else { %><a href="?page=1">1</a>
+
+
+  <% } %>
+  <% if (currentPage > 3) { %><span class="dots">...</span>
+
+
+  <% } %>
+  <% for (let i = currentPage - 1; i <= currentPage + 1; i++) { %>
+  <% if (i > 1 && i < lastPage) { %>
+  <% if (i === currentPage) { %><span class="active">
+    <%= i %>
+  </span>
+  <% } else { %><a href="?page=<%= i %>">
+    <%= i %>
+  </a>
+
+
+  <% } %>
+
+  <% } %>
+
+  <% } %>
+  <% if (currentPage < lastPage - 2) { %><span class="dots">...</span>
+
+
+  <% } %>
+  <% if (lastPage !== 1) { %>
+  <% if (currentPage === lastPage) { %><span class="active">
+    <%= lastPage %>
+  </span>
+  <% } else { %><a href="?page=<%= lastPage %>">
+    <%= lastPage %>
+  </a>
+
+  <% } %>
+
+  <% } %>
+  <!--<% if (hasNextPage) { %><a href="?page=<%= nextPage %>">Next</a>
+  
+<% } %>-->
+</div>
